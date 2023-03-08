@@ -1,0 +1,17 @@
+.links {
+    /* buttons Spread horizontally */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 50%;
+}
+
+.canvas {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+h1, a {
+    color:aliceblue;
+    text-decoration: none;
+}
