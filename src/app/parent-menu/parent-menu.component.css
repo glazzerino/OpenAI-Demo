@@ -1,0 +1,29 @@
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Name your pet!</h1>
+    <img class="poster" src="./assets/names.png" alt="Names" width="200" height="200">
+    <div id="inputs">
+        <input placeholder="Enter the kind of pet u got" type="text" [(ngModel)]="input">
+        <button (click)="onClick()">Submit</button>
+    </div>
+    <h3>{{petName}}</h3>
+</div>
