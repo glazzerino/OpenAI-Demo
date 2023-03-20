@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: {model_name}-server
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -22,6 +22,10 @@ spec:
 ---
 apiVersion: v1
 kind: Service
+metadata:
+  labels:
+    run: {model_name}-service
+  name: {model_name}-service
 spec:
   ports:
   - port: 80
