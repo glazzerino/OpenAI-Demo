@@ -1,19 +1,31 @@
+#manifest
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deployment
+  name: {model_name}-deployment
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: openai-demo
+      app: {model_name}-server
+  replicas: 1
   template:
     metadata:
       labels:
-        app: openai-demo
+        app: {model_name}-server
     spec:
       containers:
-      - name: openai-demo-container
-        image: nginx:latest
+      - name: {model_name}-container
+        #image: gcr.io/tensorflow-serving/resnet 
+        image: docker.io/{docker_user}/{model_name}:{github.sha}
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: {model_name}-server
+  type: LoadBalancer

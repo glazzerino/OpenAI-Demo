@@ -9,7 +9,7 @@ build:
   #  - OKTETO_BUILD_OPENAI_DEMO_REPOSITORY: image repo
   #  - OKTETO_BUILD_OPENAI_DEMO_IMAGE: image name
   #  - OKTETO_BUILD_OPENAI_DEMO_SHA: image tag sha256
-  OpenAI-Demo:
+  openai-demo:
     context: .
     dockerfile: Dockerfile
 
