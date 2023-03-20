@@ -1,1 +1,7 @@
-<p>moderations works!</p>
+<div class="container">
+    <img src="./assets/angry.png" alt="Angry teddy bear shouting with mouth open, one line art" width="200"
+        height="200">
+    <input class="large-input" type="text" placeholder="Enter a sus message" [(ngModel)]="user_input" />
+    <button (click)="onClick()" class="button-submit">Submit</button>
+    <h3>{{result}}</h3>
+</div>

@@ -9,7 +9,7 @@ import { TextdavinciComponent } from './textdavinci/textdavinci.component';
 import { ModerationsComponent } from './moderations/moderations.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { DalleComponentComponent } from './dalle-component/dalle-component.component';
 
 
 @NgModule({
@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     ParentMenuComponent,
     TextdavinciComponent,
     ModerationsComponent,
+    DalleComponentComponent,
 
   ],
   imports: [

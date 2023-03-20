@@ -1,0 +1,8 @@
+<div class="container">
+    <img src="./assets/david.png" alt="a sculpture with mexican hat" class="poster">
+    <input type="text" class="large-input" placeholder="lets generate an image" [(ngModel)]="imagePrompt">
+    <button class="button-submit" (click)="onClick()">Generate</button>
+    <div class="image-container">
+        <img [src]="this.sanitizer.bypassSecurityTrustResourceUrl(imageURL)" />
+    </div>
+</div>
