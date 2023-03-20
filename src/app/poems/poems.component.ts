@@ -1,23 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { env } from '../../assets/env';
+import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { NgModel } from '@angular/forms';
+import { env } from '../../assets/env';
+
 @Component({
-  selector: 'app-textdavinci',
-  templateUrl: './textdavinci.component.html',
-  styleUrls: ['./textdavinci.component.css']
+  selector: 'app-poems',
+  templateUrl: './poems.component.html',
+  styleUrls: ['./poems.component.css']
 })
 
-export class TextdavinciComponent {
-  @Input() input: string = "";
+export class PoemsComponent {
+  input: string = "";
   constructor(private httpClient: HttpClient) { };
   apiKey = env.openai;
   endpoint = "https://api.openai.com/v1/completions"
-  petName: string = "";
-
-  ngOnInit() {
-    console.log(env.openai);
-  }
+  poemTopic: string = "";
 
   async runPrompt(prompt: string): Promise<string> {
     // Get input from the input form
@@ -35,6 +31,7 @@ export class TextdavinciComponent {
     try {
       const data: any = await this.httpClient.post(this.endpoint, body, { headers: headers }).toPromise();
       if (data.choices) {
+        console.log(data)
         modelResponse = data.choices[0].text;
         console.log(modelResponse);
       } else {
@@ -57,39 +54,27 @@ export class TextdavinciComponent {
 
   async onClick() {
     if (this.input == "") {
-      this.petName = "Empty McEmptface";
+      this.poemTopic = "";
       return;
     }
 
     let completion = await this.getCompletion();
-    this.petName = completion;
+    this.poemTopic = completion;
   }
 
 
   getPrompt(input: string): string {
     let prompt = `
-    You are helping a user come up with a new name for their pet. The pet type is provided by the user, and you must 
-    provide the name for the pet. The name must be cute and easy to remember, and be related to the pet type.
+    You are helping a human write a poem about any given topic that they wish.
+    
+    User: a poem about clouds
+    AI: Behold the cloud, so white and pure, Drifting in the sky, so free and sure, A canvas of imagination, A dreamer's inspiration.
 
-    User: Dog
-    Fluffy McFluff
-
-    User: Cat
-    Kitty Paws the Third
-
-    User: Fish
-    Nemo
-
-    User: Bird
-    Feathery McFeather
-
-    User: Snake
-    Metal Gear Reptile
-
-    User: Spider
-    Arachnus the Great
+    User: write a poem about a dog
+    AI: A loyal friend with a wagging tail, A dog's love never seems to fail, With eyes so full of devotion, And a heart full of pure emotion.
 
     User: ${input}
+    AI: 
   `;
     return prompt;
   }

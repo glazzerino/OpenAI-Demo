@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Name your pet!</h1>
+    <img class="poster" src="./assets/william.png" alt="Names" width="200" height="200">
+    <div id="inputs">
+        <input placeholder="Enter a poem topic" type="text" [(ngModel)]="input">
+        <button (click)="onClick()">Submit</button>
+    </div>
+    <p class="result">{{poemTopic}}</p>
+</div>

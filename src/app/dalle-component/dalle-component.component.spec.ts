@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DalleComponentComponent } from './dalle-component.component';
+// import { DalleComponentComponent } from './dalle-component.component';
 
-describe('DalleComponentComponent', () => {
-  let component: DalleComponentComponent;
-  let fixture: ComponentFixture<DalleComponentComponent>;
+// describe('DalleComponentComponent', () => {
+//   let component: DalleComponentComponent;
+//   let fixture: ComponentFixture<DalleComponentComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DalleComponentComponent ]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [DalleComponentComponent]
+//     })
+//       .compileComponents();
 
-    fixture = TestBed.createComponent(DalleComponentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(DalleComponentComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

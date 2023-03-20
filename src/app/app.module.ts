@@ -1,8 +1,6 @@
-import { NgModule, Input } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-imports: [BrowserModule, NgModule, AppRoutingModule,]
 import { AppComponent } from './app.component';
 import { ParentMenuComponent } from './parent-menu/parent-menu.component';
 import { TextdavinciComponent } from './textdavinci/textdavinci.component';
@@ -10,6 +8,7 @@ import { ModerationsComponent } from './moderations/moderations.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DalleComponentComponent } from './dalle-component/dalle-component.component';
+import { PoemsComponent } from './poems/poems.component';
 
 
 @NgModule({
@@ -19,6 +18,7 @@ import { DalleComponentComponent } from './dalle-component/dalle-component.compo
     TextdavinciComponent,
     ModerationsComponent,
     DalleComponentComponent,
+    PoemsComponent,
 
   ],
   imports: [
@@ -28,7 +28,7 @@ import { DalleComponentComponent } from './dalle-component/dalle-component.compo
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

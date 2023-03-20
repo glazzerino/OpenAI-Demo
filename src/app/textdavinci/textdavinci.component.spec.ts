@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TextdavinciComponent } from './textdavinci.component';
 
 describe('TextdavinciComponent', () => {
@@ -8,16 +8,19 @@ describe('TextdavinciComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TextdavinciComponent ]
+      declarations: [TextdavinciComponent],
+      imports: [HttpClientTestingModule],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TextdavinciComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+
+  it("should display an h1 tag", () => {
+    const h1 = fixture.nativeElement.querySelector("h1");
+    expect(h1.textContent).toContain("DaVinci");
   });
 });
